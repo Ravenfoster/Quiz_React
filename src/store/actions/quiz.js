@@ -104,7 +104,6 @@ export function quizAnswerClick(answerId) {
     const state = getState().quiz
     if (state.answerState) {
       const key = Object.keys(state.answerState)[0]
-      console.log(state.answerState[key])
       if (state.answerState[key] === 'success') {
         return
       }

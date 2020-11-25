@@ -13,10 +13,7 @@ export function auth(email, password, isLogin) {
       url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBGZT55F4IRSHoakrgaXXXMynKTArn2gFc'
     }
     const response = await axios.post(url, authData)
-    console.log(response)
-    console.log(response.data)
     const data = response.data
-    
     const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
 
     localStorage.setItem('token', data.idToken) 
